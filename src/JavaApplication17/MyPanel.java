@@ -12,8 +12,8 @@ public class MyPanel extends JPanel {
     LinkedList<Figura> figura = new LinkedList<Figura>();
     public Figura selectedFigura;
 
-    Color color=Color.black;
-    int jirina=1;
+    Color color = Color.black;
+    int jirina = 1;
 
 
     public MyPanel() {
@@ -24,7 +24,7 @@ public class MyPanel extends JPanel {
 
         menubar.setLayout(null);
 
-        menubar.setBounds(0,0,600,50);
+        menubar.setBounds(0, 0, 600, 50);
 
         add(menubar);
         JMenu menu1 = new JMenu("Фигура");
@@ -41,51 +41,48 @@ public class MyPanel extends JPanel {
         JMenuItem jir4 = new JMenuItem("Cтандартная");
 
 
-
-        jir1.addActionListener(new ButtonJirina(this,10));
-        jir2.addActionListener(new ButtonJirina(this,20));
-        jir3.addActionListener(new ButtonJirina(this,30));
-        jir4.addActionListener(new ButtonJirina(this,1));
+        jir1.addActionListener(new ButtonJirina(this, 10));
+        jir2.addActionListener(new ButtonJirina(this, 20));
+        jir3.addActionListener(new ButtonJirina(this, 30));
+        jir4.addActionListener(new ButtonJirina(this, 1));
 
         JMenuItem color1 = new JMenuItem("Красный");
         color1.setBackground(Color.red);
-        color1.addActionListener(new ButtonColor(this,color1.getBackground()));
+        color1.addActionListener(new ButtonColor(this, color1.getBackground()));
 
 
         JMenuItem color2 = new JMenuItem("Оранжевый");
         color2.setBackground(Color.orange);
-        color2.addActionListener(new ButtonColor(this,color2.getBackground()));
+        color2.addActionListener(new ButtonColor(this, color2.getBackground()));
 
         JMenuItem color3 = new JMenuItem("Желтый");
         color3.setBackground(Color.yellow);
-        color3.addActionListener(new ButtonColor(this,color3.getBackground()));
+        color3.addActionListener(new ButtonColor(this, color3.getBackground()));
 
         JMenuItem color4 = new JMenuItem("Зеленый");
         color4.setBackground(Color.green);
-        color4.addActionListener(new ButtonColor(this,color4.getBackground()));
+        color4.addActionListener(new ButtonColor(this, color4.getBackground()));
 
         JMenuItem color5 = new JMenuItem("Голубой");
         color5.setBackground(Color.cyan);
-        color5.addActionListener(new ButtonColor(this,color5.getBackground()));
+        color5.addActionListener(new ButtonColor(this, color5.getBackground()));
 
         JMenuItem color6 = new JMenuItem("Синий");
         color6.setBackground(Color.blue);
-        color6.addActionListener(new ButtonColor(this,color6.getBackground()));
+        color6.addActionListener(new ButtonColor(this, color6.getBackground()));
 
         JMenuItem color7 = new JMenuItem("Фиолетовый");
         color7.setBackground(new Color(230, 16, 255));
-        color7.addActionListener(new ButtonColor(this,color7.getBackground()));
+        color7.addActionListener(new ButtonColor(this, color7.getBackground()));
 
 
-
-
-        menu1.setBounds(0,0,200,50);
+        menu1.setBounds(0, 0, 200, 50);
         menubar.add(menu1);
 
         menu2.setBounds(200, 0, 200, 50);
         menubar.add(menu2);
 
-        menu3.setBounds(400,0,200,50);
+        menu3.setBounds(400, 0, 200, 50);
         menubar.add(menu3);
         menu1.add(item1);
         menu1.add(item2);
@@ -108,9 +105,6 @@ public class MyPanel extends JPanel {
         menu2.setLayout(null);
 
 
-
-
-
         item1.addActionListener(new ButtonCreate(this));
         item2.addActionListener(new ButtonDelete(this));
         item3.addActionListener(new ButtonDeleteAll(this));
@@ -119,7 +113,7 @@ public class MyPanel extends JPanel {
         JMenuItem ip1 = new JMenuItem("хех");
         pop1.add(ip1);
 
-        jir1.addActionListener(new PopupHallo(this,pop1));
+        jir1.addActionListener(new PopupHallo(this, pop1));
         //jir1.addMouseListener(new PopupListener(this,pop1,jir1));
 
         t1 = new JTextField();
@@ -153,10 +147,9 @@ public class MyPanel extends JPanel {
         R = Integer.parseInt(t3.getText());
         h1 = this.getHeight();
         h2 = this.getWidth();
-        System.out.println(h1+" "+h2);
 
         if ((x - R >= 0) && (y - R >= 0) && (x + R <= h2) && (y + R <= h1)) {
-            Figura kor = new Figura(x, y, R,color,jirina);
+            Figura kor = new Figura(x, y, R, color, jirina);
 
             figura.add(kor);
 
@@ -179,8 +172,6 @@ public class MyPanel extends JPanel {
         figura.clear();
 
     }
-
-
 
 
 }
